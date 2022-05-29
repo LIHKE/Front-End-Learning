@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log(num1); //输出undefined，var num1会提前，此时还没赋值
+        var num1 = 10;
+
+        fun();
+        var fun = function () {
+            console.log(22) //报错，所以不要用var变量来声明函数
+        }
+        //以上相当于执行了以下代码：
+        var fun;
+        fun();  //由于没有这个函数，就会报错
+        fun = function () {
+            console.log(22) //报错
+        }
+
+
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+        function f1() {
+            var a = b = c = 9;
+            //相当于 var a = 9; b = 9; c = 9; b和c没有var相当于全局变量
+            //集体声明：var a = 9, b =9, c = 9;
+            //使用逗号才相当于是 var a = 9; var b = 9; var c = 9;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        //相当于如下代码：
+        function f1() {
+            var a;
+            a = b = c = 9;
+            console.log(a);//9
+            console.log(b);//9
+            console.log(c);//9
+        }
+        f1();
+        console.log(c);//9
+        console.log(b);//9
+        console.log(a);//报错
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //函数形参实参个数匹配
+        function getSum(num1, num2) {
+            console.log(num1 + num2)
+        }
+        //1. 如果实参个数和形参一直，正常输出
+        getSum(1, 2)
+        //2. 如果实参的个数多余形参，取形参的个数
+        getSum(1, 2, 3)
+        //3. 如果实参的个数少于形参，形参可以看作是不用声明的变量，即undefined
+        getSum(1) //1 + undefined = NaN
+
+
+        //arguments使用：
+        function fn() {
+            console.log(arguments);
+            console.log(arguments.length);
+            console.log(arguments[2]);
+            //里面存储了传递过来的实参，是伪数组
+            //1. 具有数组的length属性
+            //2. 按照索引的方式进行存储
+            //3. 没有真正数组的一些方法，如pop(), push()等
+        }
+        fn(1, 2, 3)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
