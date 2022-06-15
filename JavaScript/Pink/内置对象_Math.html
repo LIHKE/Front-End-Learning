@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //JS对象分为三种：自定义对象、内置对象、浏览器对象
+        //前两种是JS基础内容，属于ECMAScript；第三种浏览器对象属于JS独有
+        //内置对象指JS语言自带的一些对象，提供了基本而必要的功能：Math, Date, Array, String, etc.
+
+        //Math对象，不是一个构造函数，不需要new调用，所有方法和属性都是静态的
+        cnosole.log(Math.PI);
+        console.log(Math.max(1, 99, 3));
+
+        //Math.round()里的数字.5特殊，往大了取，-1.5会取到-1
+        console.log(Math.round(1.5))//四舍五入结果是2
+        console.log(Math.round(-1.5))//结果是-1
+        console.log(getran)
+
+        //random()，返回随机小数，0 <= x < 1
+        //这个方法里不传参数
+
+
+        //Practice封装数学对象，里面有PI最大值和最小值
+        var myMath = {
+            PI: 3.14159,
+            max: function () {
+                var max = arguments[0];
+                for (var i = 0; i <= arguments.length; i++) {
+                    if (arguments[i] > max) {
+                        max = arguments[i];
+                    }
+                }
+                return max;
+            },
+            min: function () {
+                var min = arguments[0];
+                for (var i = 0; i < arguments.length; i++) {
+                    if (arguments[i] < min) {
+                        min = arguments[i];
+                    }
+                }
+                return min;
+            }
+        }
+
+        //Practice猜数字游戏，随机生成1~10之间的数字，让用户输入一个数字，并提示用户是大于还是小于或是等于该数字
+        var myMath2 = {
+            getRandomInt: function (min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min) + min);
+            }
+        }
+
+        var num;
+        var randomNum = num = myMath2.getRandomInt(1, 10);
+        while (true) {
+            num = prompt('请猜随机数：');
+            if (num < randomNum) {
+                alert('猜小了');
+                continue;
+            }
+            else if (num > randomNum) {
+                alert('猜大了');
+                continue;
+            }
+            else {
+                alert('猜对了');
+                break;
+            }
+        }
+    </script>
+</body>
+
+</html>

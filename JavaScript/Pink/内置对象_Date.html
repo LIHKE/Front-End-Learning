@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Date是构造函数，跟Math不一样，必须使用new来调用
+        //如果没有参数，返回当前时间
+        var date = new Date();
+        console.log(date);
+        //数字型：2022,6,15, 会返回7月（月份是从0开始），不常用
+        var date1 = new Date(2022, 6, 15)
+        console.log(date1);
+        //字符串型：'2022-6-15 13:30:14'或者'2022/6/15'
+        var date2 = new Date('2022-6-15 13:30:14')
+        console.log(date2);
+
+        //日期格式化，有各种方法
+        var date3 = new Date();
+        console.log(date.getFullYear());//返回当前年份
+
+
+    </script>
+</body>
+
+</html>
