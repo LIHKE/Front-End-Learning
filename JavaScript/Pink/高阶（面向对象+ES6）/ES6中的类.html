@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>ClickMe</button>
+    <script>
+        var that;
+        //类里面的共有属性和方法一定要加 this 使用
+        class Star {
+            constructor(uname, uage) {
+                //constructor里的this是实例对象，将其放到that全局变量里
+                that = this;
+                this.name = uname;
+                this.age = uage;
+                this.btn = document.querySelector('button');
+                this.btn.onclick = this.sing;
+            }
+            sing() {
+                console.log(this);
+                //1. 如果是new了一个实例ldh，并且直接用这个实例来调用这个方法ldh.sing()，
+                //那么这时这个方法里的this指向这个实例ldh，因此this.name有值
+                //2. 如果new了一个实例后，构造函数走一圈，定义了btn以及onclick事件，这时如果点击按钮，触发onclick
+                //这时是btn调用sing，因此this指向btn这个按钮，由于btn没有name这个属性，因此结果是undefined
+                console.log(this.name);
+                //使用that调用实例对象的.name属性
+                console.log(that.name);
+
+            }
+        }
+
+        var ldh = new Star('刘德华', 18);
+        ldh.sing();
+    </script>
+</body>
+
+</html>

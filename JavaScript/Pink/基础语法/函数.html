@@ -20,11 +20,12 @@
 
 
         //arguments使用：
+        //当不确定有多少个参数传递的时候，arguments对象中存储了传递的所有实参
         function fn() {
             console.log(arguments);
             console.log(arguments.length);
             console.log(arguments[2]);
-            //里面存储了传递过来的实参，是伪数组
+            //里面存储了传递过来的实参，是伪数组：
             //1. 具有数组的length属性
             //2. 按照索引的方式进行存储
             //3. 没有真正数组的一些方法，如pop(), push()等

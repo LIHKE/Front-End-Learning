@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //基本包装类型，把简单数据类型包装成复杂数据类型（装箱？
+        var str = 'andy';
+        console.log(str.length);
+        //对象才有属性和方法，复杂数据类型才有属性和方法
+        //简单数据类型为什么有length属性呢？
+        //实际上的步骤：
+        //1）把简单数据类型包装为复杂数据类型
+        var temp = new String('andy');
+        //2)把临时变量的值给str
+        str = temp;
+        //3)销毁这个临时变量
+        temp = null;
+
+        //JS有三种特殊的引用类型String，Number，Boolean
+
+        //字符串的不可变性，里面的值不变，只是增加内存，
+        //并且将指向的地址改到这个新开辟的内存地址上去了，原先的那个字符串在内存中还是存在的
+        //不要大量拼接字符串！
+        var str2 = 'andy';
+        console.log(str2);
+        str2 = 'red';//实际上开辟了新的内存，存放'red'并且把str2地址指向这个'red'的内存地址
+
+    </script>
+</body>
+
+</html>

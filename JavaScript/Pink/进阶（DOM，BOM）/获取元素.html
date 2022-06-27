@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="time">2022-6-27</div>
+
+    <ol id="ol">
+        <li>ol里的li</li>
+        <li>ol里的li</li>
+        <li>ol里的li</li>
+    </ol>
+
+    <li>document里的li</li>
+    <li>document里的li</li>
+    <li>document里的li</li>
+
+    <div class="box">盒子</div>
+    <div class="box">盒子</div>
+
+    <script>
+        //1. getElementById()
+        var timer = document.getElementById('time');
+        console.log(timer);
+        //console.dir打印返回的元素对象，更好查看里面的属性和方法
+        console.dir(timer);
+
+        //2. getElementsByTagName()返回的是获取来的元素对象集合，以伪数组的形式存储的
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+
+        var ol = document.getElementById('ol');
+        console.log(ol.getElementsByTagName('li'));
+
+        //3. getElementsByClassName()根据类名获得元素
+        var boxs = document.getElementsByClassName('box');
+        console.log(boxs);
+
+        //4. querySelector('')返回是第一个元素对象
+        var firstBox = document.querySelector('.box');//By Class Name
+        var firstLi = document.querySelector('li');//By Tag
+        var timer2 = document.querySelector('#time');//By ID
+
+        //5. document.querySelectorAll('')返回所有元素对象
+        var allBox = document.querySelectorAll('.box');
+    </script>
+</body>
+
+</html>

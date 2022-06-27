@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //数组创建方式：字面量，new
+        //字面量：
+        var emptArr = [];
+        var arr = [1, 2, 3];
+        console.log(arr[0]);
+        //new
+        var arr1 = new Array(2);//新建长度为2的数组对象
+        var arr2 = new Array(1, 2);//新建数组，里面有1，2元素
+
+        //检测是否为数组 instanceof，Array.isArray(被测对象)
+        console.log(arr2 instanceof Array);
+        console.log(Array.isArray(arr2))
+
+        //添加删除数组元素的方法
+        //1. push()在末尾添加一个或多个数组元素
+        arr.push(4, 'Hi');//arr里就有1，2，3，4，'Hi'
+
+        //2. unshift()在数组开头添加一个或多个数组元素
+        arr.unshift('red', 5);//arr里就有'red'，5，1，2，3，4，'Hi'
+
+        //3. pop()删除数组最后一个元素，返回值是最后一个删除了的元素值
+        console.log(arr.pop());//返回值是Hi，arr里就有'red'，5，1，2，3，4
+
+        //4. shift()删除数组第一个元素，返回值是第一个删除了的元素值
+        console.log(arr.shift());//返回值是red，arr里就有5，1，2，3，4
+
+        //返回数组元素索引号，只返回第一个满足条件的元素的索引号
+        console.log(arr.indexOf(5));//查找arr数组里叫5的这个元素的索引号，返回0
+        console.log(arr.lastIndexOf(5));//从最后开始查找，找第一个符合条件的元素的索引号
+
+        //Practice：数组去重
+        var arr3 = new Array('c', 'a', 'z', 'a', 'x', 'a', 'x', 'c', 'b');
+        function removeDuplicant(arr) {
+            var newArr = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (newArr.indexOf(arr[i]) === -1) {
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }
+
+        var arr4 = removeDuplicant(arr3);
+        console.log('Removed Array:' + arr4);
+        for (const key in arr4) {
+            console.log(key);
+        }
+
+
+        //数组转为字符串:
+        //.toString()
+        console.log(arr.toString());//5，1，2，3，4
+        //join(分隔符)
+        console.log(arr.join('&'));//5&1&2&3&4
+
+
+    </script>
+</body>
+
+</html>
